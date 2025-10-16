@@ -88,7 +88,7 @@ def load_db(embeddings, path):
     return vectorstore
 
 if not os.path.exists('faiss_index'):
-    vectorstore=load_db(embeddings,'IJIET-17923-Edited-finalVersion.pdf')
+    vectorstore=load_db(embeddings,'energies-16-01752-v2.pdf')
     vectorstore.save_local("faiss_index")
 else:
     vectorstore = FAISS.load_local("faiss_index",embeddings=embeddings,allow_dangerous_deserialization=True)
